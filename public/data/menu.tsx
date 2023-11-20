@@ -51,6 +51,12 @@ export const menus = [
             title: "Add Property",
             url: "/add-property",
           },
+          //-------------
+          {
+            title: "Mange post",
+            url: "/manage-post",
+          },
+          //-------------
           {
             title: "Property Details 1",
             url: "/property-details-1",
