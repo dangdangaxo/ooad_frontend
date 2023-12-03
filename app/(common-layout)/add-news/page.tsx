@@ -15,12 +15,12 @@ const page = () => {
     <div className="py-[30px] lg:py-[60px] bg-[var(--bg-2)] px-3">
       <div className="container">
         <div className="w-full xl:w-[83.33%] xxl:w-[66.66%] mx-auto">
-          {/* Item 1 */}
+          {/* Item 1 (Thumbnail) from line 19 to line 121 */}
           <div className="bg-white p-4 sm:p-6 md:p-10 mb-5 sm:mb-8 md:mb-12 rounded-2xl">
             <Accordion
               buttonContent={(open) => (
                 <div className="rounded-2xl flex justify-between items-center">
-                  <h3 className="h3">Add Properties </h3>
+                  <h3 className="h3">Add Thumbnail </h3>
                   <ChevronDownIcon
                     className={`w-5 h-5 sm:w-6 sm:h-6 duration-300 ${
                       open ? "rotate-180" : ""
@@ -28,12 +28,14 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-4">
                 <div className="border-t pt-4">
                   <p className="mb-4 text-xl font-medium">
-                    Select Property Type :
+                    Select Hotel Type :
                   </p>
+                  {/* Hotel type from line 39 to line 88*/}
                   <ul className="flex gap-6 flex-wrap">
                     <li>
                       <div className="flex items-center gap-2">
@@ -45,8 +47,9 @@ const page = () => {
                         />
                         <label
                           className="inline-block text-lg font-medium cursor-pointer"
-                          htmlFor="general-settings">
-                          General
+                          htmlFor="general-settings"
+                        >
+                          Hotel
                         </label>
                       </div>
                     </li>
@@ -60,8 +63,25 @@ const page = () => {
                         />
                         <label
                           className="inline-block text-lg font-medium cursor-pointer"
-                          htmlFor="featured-settings">
-                          Featured
+                          htmlFor="featured-settings"
+                        >
+                          Villa
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex items-center gap-2">
+                        <input
+                          className="accent-[var(--primary)] scale-125"
+                          type="radio"
+                          name="property-type"
+                          id="featured-settings"
+                        />
+                        <label
+                          className="inline-block text-lg font-medium cursor-pointer"
+                          htmlFor="featured-settings"
+                        >
+                          Apartments
                         </label>
                       </div>
                     </li>
@@ -69,16 +89,19 @@ const page = () => {
                   <p className="mt-6 mb-4 text-xl font-medium">Title:</p>
                   <input
                     type="text"
-                    className="w-full border p-2 focus:outline-none rounded-md text-base"
+                    className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
                     placeholder="Write Title"
                   />
                   <p className="mt-6 mb-4 text-xl font-medium">Sale Price:</p>
                   <CustomRangeSlider />
-                  <p className="mt-6 mb-4 text-xl font-medium">Description :</p>
+                  <p className="mt-6 mb-4 text-xl font-medium ">
+                    Description :
+                  </p>
                   <textarea
                     rows={5}
-                    className="w-full border p-2 focus:outline-none rounded-md "
-                    placeholder="Description.."></textarea>
+                    className="w-full border p-2 focus:outline-none rounded-md text-slate-50"
+                    placeholder="Description.."
+                  ></textarea>
                   <p className="mt-6 mb-4 text-xl font-medium">Tagline :</p>
                   <input
                     type="text"
@@ -96,7 +119,7 @@ const page = () => {
               </div>
             </Accordion>
           </div>
-          {/* Item 2 */}
+          {/* Item 2 (Attach files & set map) from line 123 to line 195 */}
           <div className="bg-white p-4 sm:p-6 md:p-10 mb-5 sm:mb-8 md:mb-12 rounded-2xl">
             <Accordion
               buttonContent={(open) => (
@@ -109,12 +132,14 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <div className="flex items-center justify-center border-dashed rounded-2xl w-full">
                   <label
                     htmlFor="dropzone-file"
-                    className="flex flex-col items-center justify-center w-full cursor-pointer bg-[var(--bg-2)] rounded-2xl border border-dashed">
+                    className="flex flex-col items-center justify-center w-full cursor-pointer bg-[var(--bg-2)] rounded-2xl border border-dashed"
+                  >
                     <span className="flex flex-col items-center justify-center py-12">
                       <CloudArrowUpIcon className="w-[60px] h-[60px]" />
                       <span className="h3 clr-neutral-500 text-center mt-4 mb-3">
@@ -123,7 +148,7 @@ const page = () => {
                       <span className="block text-center mb-6 clr-neutral-500">
                         OR
                       </span>
-                      <span className="inline-block py-3 px-6 rounded-full bg-[#354764] text-white mb-10">
+                      <span className="inline-block py-3 px-6 rounded-full bg-[#354764] text-white mb-10 hover:bg-gray-950">
                         Select Files
                       </span>
                       <span className="flex items-center justify-center flex-wrap gap-5">
@@ -136,7 +161,7 @@ const page = () => {
                         <span className="flex items-center gap-2">
                           <InformationCircleIcon className="w-5 h-5" />
                           <span className="block mb-0 clr-neutral-500">
-                            Maximum 10 files are allowed
+                            Maximum 5 files are allowed
                           </span>
                         </span>
                       </span>
@@ -147,7 +172,7 @@ const page = () => {
                 <p className="mt-6 mb-4 text-xl font-medium">Video Link :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
                   placeholder="Any type video link"
                 />
                 <div className="mt-6">
@@ -155,25 +180,26 @@ const page = () => {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2233.5934788396344!2d89.78232001463437!3d23.836268639364576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688381345276!5m2!1sen!2sbd"></iframe>
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2233.5934788396344!2d89.78232001463437!3d23.836268639364576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688381345276!5m2!1sen!2sbd"
+                    ></iframe>
                   </div>
                 </div>
                 <p className="mt-6 mb-4 text-xl font-medium">Address :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
                   placeholder="Enter Address"
                 />
               </div>
             </Accordion>
           </div>
 
-          {/* Item 3 */}
+          {/* Item 3 (Hotel Details) from line 197 to line 266 */}
           <div className="bg-white p-4 sm:p-6 md:p-10 mb-5 sm:mb-8 md:mb-12 rounded-2xl">
             <Accordion
               buttonContent={(open) => (
                 <div className="rounded-2xl flex justify-between items-center">
-                  <h3 className="h3">Property Details </h3>
+                  <h3 className="h3">Hotel Details </h3>
                   <ChevronDownIcon
                     className={`w-5 h-5 sm:w-6 sm:h-6 duration-300 ${
                       open ? "rotate-180" : ""
@@ -181,7 +207,8 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <p className="mb-4 text-xl font-medium"> Beds : </p>
                 <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
@@ -216,12 +243,6 @@ const page = () => {
                   <option value="3">7</option>
                   <option value="3">8</option>
                 </select>
-                <p className="mt-6 mb-4 text-xl font-medium">Area (sq ft) :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="0"
-                />
                 <p className="mt-6 mb-4 text-xl font-medium">Property ID :</p>
                 <input
                   type="text"
@@ -234,30 +255,6 @@ const page = () => {
                   className="w-full border p-2 focus:outline-none rounded-md text-base"
                   placeholder="Enter type"
                 />
-                <p className="mt-6 mb-4 text-xl font-medium">Area :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="Enter area"
-                />
-                <p className="mt-6 mb-4 text-xl font-medium">Bedrooms :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="06"
-                />
-                <p className="mt-6 mb-4 text-xl font-medium">Parking :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="3"
-                />
-                <p className="mt-6 mb-4 text-xl font-medium">Dimensions :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="0"
-                />
                 <p className="mt-6 mb-4 text-xl font-medium">Year Build :</p>
                 <input
                   type="text"
@@ -267,7 +264,7 @@ const page = () => {
               </div>
             </Accordion>
           </div>
-          {/* Item 4 */}
+          {/* Item 4 (Amenities) from line 268 to line 292 */}
           <div className="bg-white p-4 sm:p-6 md:p-10 mb-5 sm:mb-8 md:mb-12 rounded-2xl">
             <Accordion
               buttonContent={(open) => (
@@ -280,9 +277,9 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
-                <p className="text-xl font-medium"> Features : </p>
                 <ul className="columns-1 sm:columns-2 md:columns-3 lg:columns-4">
                   {propertyAmenities.map((item) => (
                     <li key={item} className="py-2">
@@ -293,7 +290,7 @@ const page = () => {
               </div>
             </Accordion>
           </div>
-          {/* Item 5 */}
+          {/* Item 5 (Contact Info) from line ... to line ...*/}
           <div className="bg-white p-4 sm:p-6 md:p-10 rounded-2xl">
             <Accordion
               buttonContent={(open) => (
@@ -306,43 +303,40 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <p className="mb-4 text-xl font-medium">Zip/Post Code :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="4"
                 />
                 <p className="mt-6 mb-4 text-xl font-medium">Phone :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="Enter Number"
                 />
                 <p className="mt-6 mb-4 text-xl font-medium"> Fax : </p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="Enter Fax number"
                 />
                 <p className="mt-6 mb-4 text-xl font-medium">Email :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="Enter Email"
                 />
                 <p className="mt-6 mb-4 text-xl font-medium">Website :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="Enter website"
                 />
-                <Link
-                  href="#"
-                  className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-semibold mt-6">
-                  <span className="inline-block"> Add New </span>
-                </Link>
+                <button className="btn btn-primary mt-5"> Add New </button>
               </div>
             </Accordion>
           </div>

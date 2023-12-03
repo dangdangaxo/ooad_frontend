@@ -48,8 +48,8 @@ export const menus = [
             url: "/property-map",
           },
           {
-            title: "Add Property",
-            url: "/add-property",
+            title: "Add News",
+            url: "/add-news",
           },
           {
             title: "Property Details 1",

@@ -4,7 +4,7 @@ import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 
 const CustomRangeSlider = () => {
-  const [value, setValue] = useState([24, 62]);
+  const [value, setValue] = useState([50, 150]);
   const handleChange = (event: any) => {
     setValue(event);
   };
@@ -15,9 +15,9 @@ const CustomRangeSlider = () => {
           onInput={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
           id="range"
           min={0}
-          max={100}
-          step={1}
-          defaultValue={[24, 62]}
+          max={500}
+          step={5}
+          defaultValue={[50, 150]}
         />
         <div className="flex justify-center gap-4 py-5">
           <span>${value[0]}</span>
