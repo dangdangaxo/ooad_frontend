@@ -336,7 +336,6 @@ const page = () => {
                   className="w-full border p-2 focus:outline-none rounded-md text-base text-white"
                   placeholder="Enter website"
                 />
-                <button className="btn btn-primary mt-5"> Add New </button>
               </div>
             </Accordion>
           </div>
@@ -353,7 +352,7 @@ const page = () => {
           </div>
 
           <Link href="#" className="btn-primary font-semibold">
-            <span className="inline-block"> Save & Preview </span>
+            <span className="inline-block"> Add News </span>
           </Link>
         </div>
       </div>
