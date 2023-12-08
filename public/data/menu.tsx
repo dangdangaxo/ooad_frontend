@@ -52,6 +52,10 @@ export const menus = [
             url: "/post-news",
           },
           {
+            title: "Manage News",
+            url: "/manage-news",
+          },
+          {
             title: "Property Details 1",
             url: "/property-details-1",
           },
