@@ -242,12 +242,6 @@ const Page = () => {
                     </li>
                     <li className="text-primary text-lg">•</li>
                     <li>
-                      <p className="mb-0">
-                        ID: <span className="text-primary">12546</span>
-                      </p>
-                    </li>
-                    <li className="text-primary text-lg">•</li>
-                    <li>
                       <div className="flex items-center gap-1">
                         <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
                         <p className="mb-0"> 4.5(66) </p>
@@ -377,7 +371,7 @@ const Page = () => {
                     id="restaurent"
                     style={tooltipStyle}
                     offset={7}
-                    content="Restaurent"
+                    content="Restaurant"
                   />
                   <Tooltip
                     id="room"
