@@ -32,10 +32,10 @@ const page = () => {
             >
               <div className="pt-4">
                 <div className="border-t pt-4">
-                  <p className="mb-4 text-xl font-medium">
+                  {/* Hotel type from line 35 to line 88*/}
+                  {/* <p className="mb-4 text-xl font-medium">
                     Select Hotel Type :
                   </p>
-                  {/* Hotel type from line 39 to line 88*/}
                   <ul className="flex gap-6 flex-wrap">
                     <li>
                       <div className="flex items-center gap-2">
@@ -85,12 +85,12 @@ const page = () => {
                         </label>
                       </div>
                     </li>
-                  </ul>
-                  <p className="mt-6 mb-4 text-xl font-medium">Title:</p>
+                  </ul> */}
+                  <p className="mt-2 mb-4 text-xl font-medium">Hotel Name:</p>
                   <input
                     type="text"
                     className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
-                    placeholder="Write Title"
+                    placeholder="This field will automatically input data"
                   />
                   <p className="mt-6 mb-4 text-xl font-medium">Sale Price:</p>
                   <CustomRangeSlider />
@@ -102,19 +102,6 @@ const page = () => {
                     className="w-full border p-2 focus:outline-none rounded-md text-slate-50"
                     placeholder="Description.."
                   ></textarea>
-                  <p className="mt-6 mb-4 text-xl font-medium">Tagline :</p>
-                  <input
-                    type="text"
-                    className="w-full border p-2 focus:outline-none rounded-md  text-base"
-                    placeholder="Your tag line"
-                  />
-                  <p className="mt-6 mb-4 text-xl font-medium"> Tag </p>
-                  <select className="w-full bg-transparent px-5 py-3 focus:outline-none border rounded-md text-base pr-3">
-                    <option>Choice</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
                 </div>
               </div>
             </Accordion>
@@ -124,7 +111,7 @@ const page = () => {
             <Accordion
               buttonContent={(open) => (
                 <div className="rounded-2xl flex justify-between items-center">
-                  <h3 className="h3">Images & Video with Map </h3>
+                  <h3 className="h3">Images with Map </h3>
                   <ChevronDownIcon
                     className={`w-5 h-5 sm:w-6 sm:h-6 duration-300 ${
                       open ? "rotate-180" : ""
@@ -169,12 +156,6 @@ const page = () => {
                     <input type="file" id="dropzone-file" className="hidden" />
                   </label>
                 </div>
-                <p className="mt-6 mb-4 text-xl font-medium">Video Link :</p>
-                <input
-                  type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
-                  placeholder="Any type video link"
-                />
                 <div className="mt-6">
                   <div className="h-[400px]">
                     <iframe
@@ -211,54 +192,27 @@ const page = () => {
             >
               <div className="pt-6">
                 <p className="mb-4 text-xl font-medium"> Beds : </p>
-                <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
-                  <option>4</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-                <p className="mt-6 mb-4 text-xl font-medium">Bathrooms :</p>
-                <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
-                  <option>3</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-                <p className="mt-6 mb-4 text-xl font-medium">Garages :</p>
-                <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
-                  <option>1</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-                <p className="mt-6 mb-4 text-xl font-medium">Person :</p>
-                <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
-                  <option>8</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="3">4</option>
-                  <option value="3">5</option>
-                  <option value="3">6</option>
-                  <option value="3">7</option>
-                  <option value="3">8</option>
-                </select>
-                <p className="mt-6 mb-4 text-xl font-medium">Property ID :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="Enter ID"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
+                  placeholder="This field will automatically input data"
                 />
-                <p className="mt-6 mb-4 text-xl font-medium">Type :</p>
+                <p className="mt-6 mb-4 text-xl font-medium">Bathrooms :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
-                  placeholder="Enter type"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
+                  placeholder="This field will automatically input data"
+                />
+                <p className="mt-6 mb-4 text-xl font-medium">Person :</p>
+                <input
+                  type="text"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
+                  placeholder="This field will automatically input data"
                 />
                 <p className="mt-6 mb-4 text-xl font-medium">Year Build :</p>
                 <input
                   type="text"
-                  className="w-full border p-2 focus:outline-none rounded-md text-base"
+                  className="w-full border p-2 focus:outline-none rounded-md text-base text-slate-50"
                   placeholder="2023"
                 />
               </div>
