@@ -8,9 +8,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
+import { FaStar } from 'react-icons/fa';
 import {
   ArrowLongLeftIcon,
   ArrowLongRightIcon,
@@ -59,7 +60,10 @@ function classNames(...classes: any[]) {
 }
 
 const Page = () => {
-  const {id} = useParams();
+
+  const [starUnColor,setStarUnColor] = useState(null);
+  const [starColor, setStarColor] = useState(null);
+  const { id } = useParams();
   const [rating, setRating] = useState([]);
 
   const [postRating, setPostRating] = useState({
@@ -69,11 +73,10 @@ const Page = () => {
 
   const [data, setData] = useState(featuredHotelData);
 
-
   const loadRating = async () => {
     const response = await axios.get("http://localhost:5001/api/rating/getallrating")
     setRating(response.data)
-
+    console.log(response.data)
   }
 
   const deleteRating = async (id) => {
@@ -82,54 +85,73 @@ const Page = () => {
   }
 
   const handleChange = (event) => {
-    setPostRating({...postRating, [event.target.name]: event.target.value });
+    if (event.target.value == 1)
+    {
+      event.target.value = "ONE";
+    }
+    if (event.target.value == 2)
+    {
+      event.target.value = "TWO";
+    }
+    if (event.target.value == 3)
+    {
+      event.target.value = "THREE";
+    }
+    if (event.target.value == 4)
+    {
+      event.target.value = "FOUR";
+    }
+    if (event.target.value == 5)
+    {
+      event.target.value = "FIVE";
+    }
+    setPostRating({ ...postRating, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     await axios.post("http://localhost:5001/api/rating/newrating", postRating)
-    .then(respne => console.log(respne));
-    console.log(postRating.comment);
-    console.log(postRating.star);
-    
+      .then(respne => console.log(respne));
+    loadRating();
+
   }
 
-function renderStar(star) {
+  function renderStar(star) {
     switch (star) {
       case "ONE":
         return <div className="flex gap-1 mb-3">
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
         </div>;
       case "TWO":
         return <div className="flex gap-1 mb-3">
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-      </div>;
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+        </div>;
       case "THREE":
         return <div className="flex gap-1 mb-3">
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-      </div>;
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+        </div>;
       case "FOUR":
         return <div className="flex gap-1 mb-3">
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-      </div>;
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+        </div>;
       case "FIVE":
         return <div className="flex gap-1 mb-3">
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-        <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-      </div>;
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+          <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
+        </div>;
       default:
         return <p>Status: Unknown</p>;
     }
-}
+  }
 
   useEffect(() => {
     loadRating();
@@ -822,7 +844,7 @@ function renderStar(star) {
                   <div className="flex items-center gap-4 justify-between flex-wrap mb-10">
                     <div className="flex items-center gap-2">
                       <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                      <h3 className="mb-0 h3"> 4.7 (21212121 reviews) </h3>
+                      <h3 className="mb-0 h3"> 4.7 (reviews) </h3>
                     </div>
                     <div className="flex items-center gap-2">
                       <p className="mb-0 clr-neutral-500 shrink-0">
@@ -839,7 +861,7 @@ function renderStar(star) {
                       </div>
                     </div>
                   </div>
-                  
+
                   {
                     rating?.map((item, index) => {
 
@@ -865,13 +887,12 @@ function renderStar(star) {
                               </div>
                             </div>
                             <div className="text-sm-end">
-                              <p className="mb-1"> 09:01 am </p>
-                              <p className="mb-0"> Mar 03, 2023 </p>
+                              {item.createAt}
                             </div>
                           </div>
                           <div className="border border-dashed my-6"></div>
 
-                          <p> { renderStar(item.star) } </p>
+                          <p> {renderStar(item.star)} </p>
 
                           <div> {item.comment} </div>
 
@@ -906,9 +927,9 @@ function renderStar(star) {
                                 placeholder="Join the discussion"
                               />
                             </div> */}
-                            
+
                             <button className="btn-primary" onClick={() => deleteRating(item.id)}>
-                            Delete Rating
+                              Delete Rating
                             </button>
                           </div>
                         </div>
@@ -933,18 +954,41 @@ function renderStar(star) {
                     <div className="border border-dashed my-6"></div>
                     <p className="text-xl font-medium mb-3">Rating *</p>
 
-                    <div className="flex gap-1 mb-3">
-                      <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                      <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                      <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                      <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                      <StarIcon className="w-5 h-5 text-[var(--tertiary)]" />
-                    </div>
 
                     <form onSubmit={handleSubmit}>
-
                       <div className="grid grid-cols-12 gap-4">
-                        <div className="col-span-12">
+
+                        <div className="flex gap-1 mb-3">
+                          {
+                            [...Array(5)].map((star, index) => {
+                              const currentRating = index + 1;
+                              return (
+                                <label>
+
+                                  <input
+                                    className="display:none"
+                                    type="radio"
+                                    name="star"
+                                    value={currentRating}
+                                    onChange={handleChange}
+                                    onClick={
+                                      () => setStarColor(currentRating)
+                                    }
+                                    >
+                                  </input>
+
+                                  <FaStar className="cursor:pointer" 
+                                    size={50}
+                                    color= {currentRating <= (starUnColor || starColor) ? "#ffc107" : "#e4e5e9"}
+                                    />
+
+                                </label>
+                              );
+                            })
+                          }
+                        </div>
+
+                        {/* <div className="col-span-12">
                           <label
                             htmlFor="review-name"
                             className="text-xl font-medium block mb-3">
@@ -959,7 +1003,7 @@ function renderStar(star) {
                             placeholder="Enter Name.."
                             id="review-name"
                           />
-                        </div>
+                        </div> */}
 
                         {/* <div className="col-span-12">
                           <label
