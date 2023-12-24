@@ -18,6 +18,9 @@ import HeadlessList from "@/components/ListBox";
 import CounterElement from "@/components/CounterElement";
 
 const Page = () => {
+  const handleDeleteUser=()=>{
+    confirm("Are you sure you want to delete ?")
+  }
   // var options: ApexOptions = {
   //   chart: {
   //     type: "area",
@@ -62,13 +65,12 @@ const Page = () => {
             <table className="w-full whitespace-nowrap">
               <thead>
                 <tr className="text-left bg-[var(--bg-1)] border-b border-dashed">
-                  <th className="py-3 lg:py-4 px-2 xl:px-4">Hotel Name</th>
-                  <th className="py-3 lg:py-4 px-2">Location</th>
-                  <th className="py-3 lg:py-4 px-2">Agents</th>
-                  <th className="py-3 lg:py-4 px-2">Date</th>
+                  <th className="py-3 lg:py-4 px-2 xl:px-4">Name</th>
+                  <th className="py-3 lg:py-4 px-2">Address</th>
+                  <th className="py-3 lg:py-4 px-2">Agent</th>
+                  <th className="py-3 lg:py-4 px-2">Date of Birth</th>
                   <th className="py-3 lg:py-4 px-2">Status</th>
                   <th className="py-3 lg:py-4 px-2">Review</th>
-                  <th className="py-3 lg:py-4 px-2">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -97,9 +99,17 @@ const Page = () => {
                       </td>
                       <td className="py-3 lg:py-4 px-2">
                         <button className="text-primary px-2"> 
+                        <Link href={{
+                          pathname:'/manage-user/detail',
+                          query:{
+                            id, agent, date, location, name, review, status 
+                          }
+                          }
+                        }>
                           <PencilSquareIcon className="w-5 h-5" />
+                        </Link>
                         </button>
-                        <button className="text-[var(--secondary-500)] px-2">
+                        <button className="text-[var(--secondary-500)] px-2" onClick={handleDeleteUser}>
                           <TrashIcon className="w-5 h-5" />
                         </button>
                       </td>

@@ -416,7 +416,7 @@ const Page = () => {
                     <ArrowLongRightIcon className="w-5 h-5" />
                   </Link>
                 </div>
-                <div className="p-3 sm:p-4 lg:p-6 bg-white rounded-2xl mb-10">
+                {/* <div className="p-3 sm:p-4 lg:p-6 bg-white rounded-2xl mb-10">
                   <h4 className="mb-5 text-2xl font-semibold"> Services </h4>
                   <div className="mb-10">
                     <div className="grid grid-cols-12 gap-4 lg:gap-6">
@@ -543,8 +543,8 @@ const Page = () => {
                   <Link href="#" className="btn-outline  font-semibold">
                     Read More
                   </Link>
-                </div>
-                <div className="p-3 sm:p-4 lg:p-6 bg-white rounded-2xl mb-10">
+                </div> */}
+                {/* <div className="p-3 sm:p-4 lg:p-6 bg-white rounded-2xl mb-10">
                   <h4 className="mb-5 text-2xl font-semibold"> Advantages </h4>
                   <ul className="flex flex-col gap-4 mb-5">
                     <li>
@@ -602,7 +602,7 @@ const Page = () => {
                     </span>
                     <ArrowLongRightIcon className="w-5 h-5" />
                   </Link>
-                </div>
+                </div> */}
 
                 <div className="p-3 sm:p-4 lg:p-6 bg-white rounded-2xl mb-10">
                   <h4 className="mb-5 text-2xl font-semibold">

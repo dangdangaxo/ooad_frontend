@@ -17,12 +17,15 @@ import Link from "next/link";
 type Props = {}
 
 const Page = (props: Props) => {
+  const handleDeletePost = ()=>{
+    alert("Are you sure you want to delete ?")
+  }
   return (
     <div className="bg-[var(--bg-2)]">
       <div className="flex items-center justify-between flex-wrap px-3 py-5 md:p-[30px] gap-5 lg:p-[60px] bg-[var(--dark)]">
         <h2 className="h2 text-white">Manage posts</h2>
         <Link href="/manage-user" className="btn-primary">
-          <ArrowRightCircleIcon className="w-5 h-5" /> Manage users
+          <ArrowRightCircleIcon className="w-5 h-5" />Manage users
         </Link>
       </div>
 
@@ -31,9 +34,9 @@ const Page = (props: Props) => {
       <div className="p-3 sm:p-4 md:py-6 lg:py-8 md:px-8 lg:px-10 border rounded-2xl bg-white">
         <div className="flex flex-wrap gap-2 justify-between mb-7">
           <h3 className="h3">All posts</h3>
-          <Link href="/manage-post/add-post" className="btn-primary">
-            <PlusIcon className="w-5 h-5" /> Add post
-          </Link>
+          {/* <Link href="/manage-post/edit-post" className="btn-primary">
+            <PlusIcon className="w-5 h-5" /> Edit post
+          </Link> */}
         </div>
         <div className="overflow-x-auto">
           <table className="w-full whitespace-nowrap">
@@ -52,6 +55,7 @@ const Page = (props: Props) => {
               {adminRecentListings.map(
                 ({ id, agent, date, location, name, review, status }) => (
                   <tr
+                    
                     key={id}
                     className="border-b border-dashed hover:bg-[var(--bg-1)] duration-300">
                     <td className="py-3 lg:py-4 px-2 xl:px-4">{name}</td>
@@ -74,11 +78,11 @@ const Page = (props: Props) => {
                     </td>
                     <td className="py-3 lg:py-4 px-2">
                       <button className="text-primary px-2">
-                        <Link href="/add-property">
+                        <Link href="/manage-post/edit-post">
                           <PencilSquareIcon className="w-5 h-5"/>
                         </Link>
                       </button>
-                      <button className="text-[var(--secondary-500)] px-2">
+                      <button className="text-[var(--secondary-500)] px-2"  onClick={handleDeletePost}>
                         <TrashIcon className="w-5 h-5" />
                       </button>
                     </td>

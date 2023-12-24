@@ -43,9 +43,9 @@ const Page = (props: Props) => {
           <InputCustom title="Name" placholder="Write your name ..." mutiple={false}/>
           <InputCustom title="Name" placholder="Write your name ..." mutiple={false}/>
           <InputCustom title="Name 2" placholder="Write your name ..." mutiple={true}/>
-        </div>
-        <div className='hover:bg-sky-700 btn-primary mt-10'>
-          <button>Save changes</button>
+          <div className='hover:bg-sky-700 btn-primary mt-10'>
+            <button>Save changes</button>
+          </div>
         </div>
       </div>
     </div>
