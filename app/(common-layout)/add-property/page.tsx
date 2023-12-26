@@ -28,7 +28,8 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-4">
                 <div className="border-t pt-4">
                   <p className="mb-4 text-xl font-medium">
@@ -45,7 +46,8 @@ const page = () => {
                         />
                         <label
                           className="inline-block text-lg font-medium cursor-pointer"
-                          htmlFor="general-settings">
+                          htmlFor="general-settings"
+                        >
                           General
                         </label>
                       </div>
@@ -60,7 +62,8 @@ const page = () => {
                         />
                         <label
                           className="inline-block text-lg font-medium cursor-pointer"
-                          htmlFor="featured-settings">
+                          htmlFor="featured-settings"
+                        >
                           Featured
                         </label>
                       </div>
@@ -78,7 +81,8 @@ const page = () => {
                   <textarea
                     rows={5}
                     className="w-full border p-2 focus:outline-none rounded-md "
-                    placeholder="Description.."></textarea>
+                    placeholder="Description.."
+                  ></textarea>
                   <p className="mt-6 mb-4 text-xl font-medium">Tagline :</p>
                   <input
                     type="text"
@@ -109,12 +113,14 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <div className="flex items-center justify-center border-dashed rounded-2xl w-full">
                   <label
                     htmlFor="dropzone-file"
-                    className="flex flex-col items-center justify-center w-full cursor-pointer bg-[var(--bg-2)] rounded-2xl border border-dashed">
+                    className="flex flex-col items-center justify-center w-full cursor-pointer bg-[var(--bg-2)] rounded-2xl border border-dashed"
+                  >
                     <span className="flex flex-col items-center justify-center py-12">
                       <CloudArrowUpIcon className="w-[60px] h-[60px]" />
                       <span className="h3 clr-neutral-500 text-center mt-4 mb-3">
@@ -155,7 +161,8 @@ const page = () => {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2233.5934788396344!2d89.78232001463437!3d23.836268639364576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688381345276!5m2!1sen!2sbd"></iframe>
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2233.5934788396344!2d89.78232001463437!3d23.836268639364576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688381345276!5m2!1sen!2sbd"
+                    ></iframe>
                   </div>
                 </div>
                 <p className="mt-6 mb-4 text-xl font-medium">Address :</p>
@@ -173,7 +180,7 @@ const page = () => {
             <Accordion
               buttonContent={(open) => (
                 <div className="rounded-2xl flex justify-between items-center">
-                  <h3 className="h3">Property Details </h3>
+                  <h3 className="h3">Hotel Details </h3>
                   <ChevronDownIcon
                     className={`w-5 h-5 sm:w-6 sm:h-6 duration-300 ${
                       open ? "rotate-180" : ""
@@ -181,7 +188,8 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <p className="mb-4 text-xl font-medium"> Beds : </p>
                 <select className="w-full bg-transparent p-3 focus:outline-none border rounded-md text-base">
@@ -280,7 +288,8 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <p className="text-xl font-medium"> Features : </p>
                 <ul className="columns-1 sm:columns-2 md:columns-3 lg:columns-4">
@@ -306,7 +315,8 @@ const page = () => {
                   />
                 </div>
               )}
-              initialOpen={true}>
+              initialOpen={true}
+            >
               <div className="pt-6">
                 <p className="mb-4 text-xl font-medium">Zip/Post Code :</p>
                 <input
@@ -340,7 +350,8 @@ const page = () => {
                 />
                 <Link
                   href="#"
-                  className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-semibold mt-6">
+                  className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-semibold mt-6"
+                >
                   <span className="inline-block"> Add New </span>
                 </Link>
               </div>

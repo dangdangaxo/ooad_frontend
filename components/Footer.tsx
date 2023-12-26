@@ -21,35 +21,40 @@ const Footer = () => {
                 <li>
                   <Link
                     href="#"
-                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full">
+                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full"
+                  >
                     <i className="lab la-facebook-f text-xl"></i>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full">
+                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full"
+                  >
                     <i className="lab la-twitter text-xl"></i>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full">
+                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full"
+                  >
                     <i className="lab la-linkedin-in text-xl"></i>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full">
+                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full"
+                  >
                     <i className="lab la-instagram text-xl"></i>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full">
+                    className="border border-[#3538ED] duration-300 hover:bg-[#3538ED] grid place-content-center p-[10px] rounded-full"
+                  >
                     <i className="lab la-dribbble text-xl"></i>
                   </Link>
                 </li>
@@ -61,35 +66,40 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/help-center"
-                    className="hover:text-[var(--secondary)] duration-300">
+                    className="hover:text-[var(--secondary)] duration-300"
+                  >
                     Help Center
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/offers"
-                    className="hover:text-[var(--secondary)] duration-300">
+                    className="hover:text-[var(--secondary)] duration-300"
+                  >
                     Offers
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/privacy"
-                    className="hover:text-[var(--secondary)] duration-300">
+                    className="hover:text-[var(--secondary)] duration-300"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/terms"
-                    className="hover:text-[var(--secondary)] duration-300">
+                    className="hover:text-[var(--secondary)] duration-300"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="blog-grid"
-                    className="hover:text-[var(--secondary)] duration-300">
+                    className="hover:text-[var(--secondary)] duration-300"
+                  >
                     Blog
                   </Link>
                 </li>
@@ -111,7 +121,8 @@ const Footer = () => {
                     <i className="las la-envelope-open bg-[var(--secondary)] text-[var(--neutral-700)] text-xl p-2 rounded-full"></i>
                     <Link
                       href="mailto:example@mail.com"
-                      className="mb-0 clr-neutral-30">
+                      className="mb-0 clr-neutral-30"
+                    >
                       example@mail.com
                     </Link>
                   </div>
@@ -140,7 +151,8 @@ const Footer = () => {
                   />
                   <button
                     type="button"
-                    className="grid place-content-center px-6 py-3 rounded-full bg-[var(--tertiary)]  border-0">
+                    className="grid place-content-center px-6 py-3 rounded-full bg-[var(--tertiary)]  border-0"
+                  >
                     <PaperPlane />
                   </button>
                 </form>
@@ -153,44 +165,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-span-12">
             <div className="py-8 border-t border-[#3638bd] text-white">
-              <div className="grid grid-cols-12 gap-4 ">
-                <div className="col-span-12 lg:col-span-6">
-                  <p className="m-0 text-center lg:text-start">
-                    Copyright &copy; {new Date().getFullYear()}
-                    <span className="text-[var(--tertiary)]"> Placewise </span>.
-                    Designed By
-                    <Link href="#" className="text-[var(--secondary)]">
-                      {" "}
-                      Pixelaxis
-                    </Link>
-                  </p>
-                </div>
-                <div className="col-span-12 lg:col-span-6">
-                  <ul className="flex items-center flex-wrap gap-6 justify-center lg:justify-end">
-                    <li>
-                      <Link
-                        href="/sign-in"
-                        className="hover:text-[var(--secondary)] duration-300">
-                        Sign in
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/signup"
-                        className="hover:text-[var(--secondary)] duration-300">
-                        Sign Up
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/faq"
-                        className="hover:text-[var(--secondary)] duration-300">
-                        FAQ
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <div className="grid grid-cols-12 gap-4 "></div>
             </div>
           </div>
         </div>
